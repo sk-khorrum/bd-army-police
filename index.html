@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WOOD Communication</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }header, footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem;
+}
+
+.about, .services, .clients {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.clients {
+  text-align: center;
+}
+
+.slider {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to WOOD Communication</h1>
+    <p>We specialize in Expo Stall Design and Marketing</p>
+  </header>  <main>
+    <section class="about">
+      <h2>About Us</h2>
+      <p>WOOD Communication is your one-stop solution for exhibition stall design and branding.</p>
+    </section><section class="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Expo Stall Design</li>
+    <li>Event Branding</li>
+    <li>Marketing Consultation</li>
+  </ul>
+</section>
+
+<section class="clients">
+  <h2>Our Clients</h2>
+  <div class="slider">
+    <img src="https://via.placeholder.com/600x300?text=Client+1" alt="Client 1" class="slide active" />
+    <img src="https://via.placeholder.com/600x300?text=Client+2" alt="Client 2" class="slide" />
+    <img src="https://via.placeholder.com/600x300?text=Client+3" alt="Client 3" class="slide" />
+  </div>
+</section>
+
+  </main>  <footer>
+    <p>&copy; 2025 WOOD Communication. All rights reserved.</p>
+  </footer>  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) {
+            slide.classList.add("active");
+          }
+        });
+      }
+
+      function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }
+
+      setInterval(nextSlide, 3000);
+    });
+  </script></body>
+</html>
